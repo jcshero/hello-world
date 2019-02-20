@@ -1,10 +1,10 @@
 import datetime
 now = datetime.datetime.now()
+print('Hello, what is your name?')
+name = input()
 
 while True:
     try:
-        print('Hello, what is your name?')
-        name = input()
         print('How old are you?')
         userAge = int(input())
         if userAge < 0:
