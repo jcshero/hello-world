@@ -1,0 +1,33 @@
+import datetime
+now = datetime.datetime.now()
+
+while True:
+    try:
+        print('Hello, what is your name?')
+        name = input()
+        print('How old are you?')
+        userAge = int(input())
+        if userAge < 0:
+            print('C''mon ' + name + ', enter a real age value wise guy.')
+        elif userAge < 2:
+            print('Seriously, ' + name + '?  I highly doubt that given the age in which people identify numbers.')
+        else:
+            break
+    except ValueError:
+        print('Please enter your age as a numeric symbol.')
+
+userMsg = name + ', You are ' + str(userAge) + ' years old. You will be 100 years old on this date in the year ' + str(100 - userAge + now.year) + '.'
+print(userMsg)
+
+while True:
+    try:
+        print('Enter another number (positive integers only please!)')
+        anotherNumber = int(input())
+        if anotherNumber <= 0:
+            print('C''mon ' + name + ', enter a postive integer only.')
+        else:
+            break
+    except ValueError:
+        print('Please enter the number as a numeric symbol.')
+
+print((userMsg + '\n') * anotherNumber)
