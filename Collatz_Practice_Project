@@ -1,0 +1,26 @@
+# Working in Python 3.7 32 bit on Windows 10 system
+# Chapter 3 project in book Automate the Boring Stuff with Python by Al Sweigart
+# The code should take an integer and decide if it should divide it by 2 or multiply it by three and add one. Then it will re-enter that number into the Collatz definition until finally, the result is 1.  
+# What I don't understand is that a user cannot actually enter the number 1 into the program and get the Collatz function to work.  I realize that's how I set this up, but would like to know how I set it up where an input of 1 will flow through the function to get 1, 4, 2, 1 and stop.  I'm wondering if the program would need to count how many times it sees a value of 1 and set the max count to be two, then stop.
+# Another funky aspect of the project is that the program doesn't actually work for integers without the abs() built in, nor does it work for zero or 1.  The project should specify natural numbers versus integers.
+
+def Collatz(number):
+    if number % 2 == 0:
+        return number // 2
+    else:
+        return 3 * number + 1
+
+print('Enter an integer value')
+while True:
+    try:
+        inputNumber = abs(int(input()))
+        if inputNumber == 0:
+            print('Please enter an integer value other than zero.')
+        else:
+            break
+    except ValueError:
+        print('I said enter an integer, so please do that.')
+
+while inputNumber != 1:
+    inputNumber = Collatz(inputNumber)
+    print(inputNumber)
