@@ -43,3 +43,9 @@ while len(d) < listLength:
     listGenerator(d)
     d.sort()
 print('List d is: ' + str(d))
+
+def intersection(lst1, lst2):
+    intersectList = [i for i in lst1 if i in lst2]
+    return intersectList
+
+print('The intersection of the two lists is ' + str(intersection(c, d)))
