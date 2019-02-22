@@ -12,8 +12,11 @@ def inputFunc():
         except ValueError:
                 print('Enter an integer value please.')
 
-print('Type in the length you want your lists to be: ')
-listLength = inputFunc()
+print('Type in the length you want your first list to be: ')
+listLength1 = inputFunc()
+
+print('Type in the length you want your second list to be: ')
+listLength2 = inputFunc()
 
 print('Your two lists will contain randomly selected numbers.  Please choose the low and high end of the range in the next prompts.')
 
@@ -34,18 +37,16 @@ def listGenerator(list):
     num = random.randint(possListValLow, possListValHigh)
     return list.append(num)
     
-while len(c) < listLength:
+while len(c) < listLength1:
     listGenerator(c)
     c.sort()
 print('List c is: ' + str(c))
 
-while len(d) < listLength:
+while len(d) < listLength2:
     listGenerator(d)
     d.sort()
 print('List d is: ' + str(d))
 
-def intersection(lst1, lst2):
-    intersectList = [i for i in lst1 if i in lst2]
-    return intersectList
+intersectList = list(set(c) & set(d))
 
-print('The intersection of the two lists is ' + str(intersection(c, d)))
+print('The intersection of the two lists is ' + str(intersectList))
