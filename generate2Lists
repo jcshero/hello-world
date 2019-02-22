@@ -3,30 +3,27 @@ import random
 c = []
 d = []
 
-while True:
-    try:
-        listLength = int(input('Type in the length you want your lists to be: '))
-        break
-    except ValueError:
-        print('enter an integer value please.')
+def inputFunc():
+    while True:
+        try:
+            inputValue = int(input())
+            return inputValue
+            break
+        except ValueError:
+                print('Enter an integer value please.')
+
+print('Type in the length you want your lists to be: ')
+listLength = inputFunc()
 
 print('Your two lists will contain randomly selected numbers.  Please choose the low and high end of the range in the next prompts.')
 
-
 while True:
-    while True:
-        try:
-            possListValLow = int(input('Type in the low end of the range of numbers here: ')) 
-            break
-        except ValueError:
-            print('enter an integer value please.')
+    print('Type in the low end of the range of numbers here:')
+    possListValLow = inputFunc()
 
-    while True:
-        try:
-            possListValHigh = int(input('Type in the high end of the range of numbers here: '))
-            break
-        except ValueError:
-            print('enter an integer value please.')
+    print('Type in the high end of the range of numbers here:')        
+    possListValHigh = inputFunc()
+    
     if possListValLow > possListValHigh:
         print('Your low number must be less than or equal to your high number value')
         continue
