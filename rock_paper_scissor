@@ -1,0 +1,26 @@
+# Rock, paper, scissors
+
+rock = ['rock', 'Rock']
+scissors = ['scissors', 'Scissors']
+paper = ['paper', 'Paper']
+    
+def gameInput():
+    while True:
+        x = input()
+        return x
+        if x not in rock + scissors + paper:
+            print('Please enter rock or paper or scissors only.')
+            continue
+        else:
+            break
+
+while True:
+    print('Hello, player 1, please enter rock, paper, or scissors: ')
+    player1 = gameInput()
+    
+    print('Hello, player 2, please enter rock, paper, or scissors: ')
+    player2 = gameInput()
+
+    if player 1 == player 2:
+        print('Tie!')
+        
