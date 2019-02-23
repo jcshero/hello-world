@@ -13,10 +13,10 @@ def inputFunc():
                 print('Enter an integer value please.')
 
 print('Type in the length you want your first list to be: ')
-listLength1 = inputFunc()
+listLengthC = inputFunc()
 
 print('Type in the length you want your second list to be: ')
-listLength2 = inputFunc()
+listLengthD = inputFunc()
 
 print('Your two lists will contain randomly selected numbers.  Please choose the low and high end of the range in the next prompts.')
 
@@ -37,15 +37,15 @@ def listGenerator(list):
     num = random.randint(possListValLow, possListValHigh)
     return list.append(num)
     
-while len(c) < listLength1:
+while len(c) < listLengthC:
     listGenerator(c)
     c.sort()
-print('List c is: ' + str(c))
+print('Your first list is: ' + str(c))
 
-while len(d) < listLength2:
+while len(d) < listLengthD:
     listGenerator(d)
     d.sort()
-print('List d is: ' + str(d))
+print('Your second list is: ' + str(d))
 
 intersectList = list(set(c) & set(d))
 
