@@ -1,17 +1,19 @@
 # Rock, paper, scissors
 
-rock = ['rock', 'Rock']
-scissors = ['scissors', 'Scissors']
-paper = ['paper', 'Paper']
+r = 'rock'
+s = 'scissors'
+p = 'paper'
+keepPlayingListY = ['y', 'yes']
+keepPlayingListN = ['n', 'no']
     
 def gameInput():
     while True:
-        x = input()
-        return x
-        if x not in rock + scissors + paper:
+        x = input().lower()
+        if x not in (r, s, p):
             print('Please enter rock or paper or scissors only.')
             continue
         else:
+            return x
             break
 
 while True:
@@ -21,6 +23,21 @@ while True:
     print('Hello, player 2, please enter rock, paper, or scissors: ')
     player2 = gameInput()
 
-    if player 1 == player 2:
-        print('Tie!')
+    if player1 == player2:
+        print('*' * 3 + '\n' + 'Tie!' + '\n' + '*' * 3)
+    elif (player1 == r and player2 == s) or (player1 == s and player2 == p) or (player1 == p and player2 == r):
+        print('\n' + '*' * 14 + '\n' + 'Player 1 wins!' + '\n' + '*' * 14 + '\n')
+    else:
+        print('\n' + '*' * 14 + '\n' + 'Player 2 wins!' + '\n' + '*' * 14 + '\n')
+    
+    keepPlaying = input('Would you like to play again?  Please respond with yes or no: ' + '\n' * 2).lower()
+    if keepPlaying in keepPlayingListY:
+        continue
+    elif keepPlaying in keepPlayingListN:
+        break
+    else:
+        print('Please indicate your preference with a yes or a no')
+        
+
+print('Thank you for playing, I hope you had fun!' + '\n' *2)
         
