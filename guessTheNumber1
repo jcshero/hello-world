@@ -1,0 +1,32 @@
+import random
+
+secretNum = random.randint(0, 9)
+e = 'exit'
+numGuesses = 0
+
+while True:
+    guess = input('Please guess a number between 0 and 9 or type exit to exit game: ')
+    try:
+        if guess == e.lower():
+            break
+        elif guess != e and int(guess) not in range(0, 10):
+            continue
+    except ValueError:
+        continue
+    else:
+        numGuesses += 1
+        if int(guess) in range(0, 10):
+            if int(guess) == secretNum:
+                print('\n' + 'You guessed it in ' + str(numGuesses) + ' guesses.  Great job!' + '\n')
+                secretNum = random.randint(0, 9)
+                numGuesses = 0
+                continue
+            elif int(guess) < secretNum:
+                print('Your guess it too low, try a higher number.')
+                continue
+            elif int(guess) > secretNum:
+                print('Your guess is too high, try a lower number.')
+                continue
+            else:
+                print('Guess an integer value between 0 and 9.')
+                continue
