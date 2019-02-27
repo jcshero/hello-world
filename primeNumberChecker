@@ -1,0 +1,21 @@
+# This program will tell you if a number is prime or not.
+
+def primeNumChecker(x):
+    for i in range(2, x):
+            if x % i == 0:
+                return i
+while True:
+    try:
+        num = abs(int(input('input a number and I will tell you if it is prime: ')))
+    except ValueError:
+        print('Please enter an integer value only.')
+        continue
+    if num == 0 or num == 1:
+        print('\n' + 'Your number is not prime!' + '\n')
+    elif num == 2:
+        print('\n' + 'Your number is prime!' + '\n')
+    elif num != 2:
+        if primeNumChecker(num) == None:
+            print('\n' + 'Your number is prime!' + '\n')
+        else:
+            print('\n' + 'Your number is not prime!' + '\n')
