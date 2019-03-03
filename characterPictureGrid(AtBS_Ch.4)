@@ -1,3 +1,6 @@
+#takes heart image made in grid and rotates it
+#90 degrees counter clockwise
+
 grid = [['.', '.', '.', '.', '.', '.'],
         ['.', '0', '0', '.', '.', '.'],
         ['0', '0', '0', '0', '.', '.'],
