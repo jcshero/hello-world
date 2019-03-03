@@ -1,0 +1,14 @@
+#Takes a list and prints each item separated by a comma,
+#and inserts 'and ' before the last value.
+
+
+groceryList = ['eggs', 'milk', 'peanut butter', 'mixed nuts', 'beer',
+               'toothpaste', 34, 'steaks', 'chicken breasts', 'oats', 42]
+
+def grocListFunc(list):
+    for i in list[0:len(list) - 2]:
+        print(i, end = ', ')
+    print('and ' + str(list[-1]))
+
+
+grocListFunc(groceryList)
