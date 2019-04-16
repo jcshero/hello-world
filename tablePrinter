@@ -1,0 +1,30 @@
+# I want to find the length of each string in each of the inner lists,
+# then find the maximum length within each list,
+# then add that maxium length to each of the indices in the colWidth list
+# This program will take a list of lists, then print them into a table with the
+# the number of columns as their are sublists in the list.  Each column will be 
+# as wide as the longest string in the column, and each string in the column will
+# be right justified the amount of the longest string in the column.
+
+tableData = [['apples', 'oranges', 'cherries', 'banana'],
+             ['Alice', 'Bob', 'Carol', 'David'],
+             ['dogs', 'cats', 'moose', 'goose']]
+
+def printTable(someList):
+    colWidth = [0] * len(someList)
+    k = 0
+    while k <= len(someList)-1:
+        listLens = []
+        for i in someList[k][:]:
+            listLens.append(len(i))
+        colWidth[k] = max(listLens)
+        k += 1
+    j = 0
+    while j <= len(someList[0]) - 1:
+        for i in range(0, len(someList)):
+            print(someList[i][j].rjust(colWidth[i]), end = ' ')
+            continue
+        print('\n')
+        j += 1
+
+printTable(tableData)
